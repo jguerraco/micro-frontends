@@ -1,0 +1,29 @@
+{
+  "name": "host",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 3000",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "app1": "file:../app1",
+    "app2": "file:../app2",
+    "app3": "file:../app3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "shared-ui": "file:../shared-ui"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
+}
