@@ -181,7 +181,7 @@ npm run dev:all
 
 #### Build all packages:
 ```bash
-npm run build
+npm run build:all
 ```
 
 #### Build individual packages:
