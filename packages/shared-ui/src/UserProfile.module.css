@@ -1,0 +1,118 @@
+.compactContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.avatar.admin {
+  background-color: #dc2626;
+}
+
+.avatar.user {
+  background-color: #3b82f6;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.role {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
+.compactButton {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Full profile styles */
+.fullContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.avatarLarge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.avatarLarge.admin {
+  background-color: #dc2626;
+}
+
+.avatarLarge.user {
+  background-color: #3b82f6;
+}
+
+.infoFull {
+  flex: 1;
+}
+
+.nameFull {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.email {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.roleBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.roleBadge.admin {
+  color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.roleBadge.user {
+  color: #3b82f6;
+  background-color: #dbeafe;
+}

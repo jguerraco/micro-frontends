@@ -1,0 +1,84 @@
+.container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #1f2937;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.statsText {
+  color: #6b7280;
+}
+
+.todoListContainer {
+  margin-top: 1rem;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.todoItem.completed {
+  background-color: #f3f4f6;
+}
+
+.todoItem:not(.completed) {
+  background-color: white;
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+}
+
+.todoText {
+  flex: 1;
+  color: #1f2937;
+}
+
+.todoText.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+}

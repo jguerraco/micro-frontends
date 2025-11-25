@@ -1,0 +1,154 @@
+.description {
+  margin-bottom: 1.5rem;
+  color: #6b7280;
+}
+
+.usersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.userCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.userHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.userName {
+  margin: 0;
+  color: #374151;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.userUsername {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.contactInfo {
+  margin-bottom: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.contactIcon {
+  margin-right: 0.5rem;
+}
+
+.contactText {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.addressBox {
+  background-color: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.addressTitle {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.addressText {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.companyBox {
+  background-color: #f0f9ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.companyTitle {
+  margin: 0 0 0.5rem 0;
+  color: #0c4a6e;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.companyName {
+  margin: 0 0 0.25rem 0;
+  color: #0369a1;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.companyCatchPhrase {
+  margin: 0;
+  color: #0284c7;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.infoBox {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f0fdf4;
+  border: 1px solid #22c55e;
+  border-radius: 0.5rem;
+}
+
+.infoText {
+  margin: 0;
+  color: #14532d;
+  font-size: 0.875rem;
+}
+
+.loading {
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.error {
+  padding: 2rem;
+  text-align: center;
+  color: #dc2626;
+}
+
+.retryButton {
+  padding: 0.5rem 1rem;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}

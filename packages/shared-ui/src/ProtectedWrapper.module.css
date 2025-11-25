@@ -1,0 +1,32 @@
+.authRequired {
+  text-align: center;
+  padding: 2rem;
+}
+
+.authText {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.credentials {
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.accessDenied {
+  text-align: center;
+  padding: 2rem;
+}
+
+.errorText {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.roleInfo {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
