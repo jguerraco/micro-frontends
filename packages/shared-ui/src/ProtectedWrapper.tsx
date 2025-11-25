@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from './Card';
 import { useAuth } from './AuthContext';
 import { LoginForm } from './LoginForm';
+import styles from './ProtectedWrapper.module.css';
 
 interface ProtectedWrapperProps {
   children: React.ReactNode;
@@ -26,17 +27,11 @@ export const ProtectedWrapper: React.FC<ProtectedWrapperProps> = ({
     
     return fallback || (
       <Card title="🔒 Authentication Required">
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
-          <p style={{ color: '#6b7280', marginBottom: '1rem' }}>
+        <div className={styles.authRequired}>
+          <p className={styles.authText}>
             Please log in to access this feature.
           </p>
-          <div style={{
-            padding: '1rem',
-            backgroundColor: '#f8fafc',
-            borderRadius: '0.375rem',
-            fontSize: '0.875rem',
-            color: '#64748b',
-          }}>
+          <div className={styles.credentials}>
             <strong>Demo Credentials:</strong><br />
             Admin: admin@example.com / admin123<br />
             User: user@example.com / user123
@@ -54,11 +49,11 @@ export const ProtectedWrapper: React.FC<ProtectedWrapperProps> = ({
     if (!hasPermission) {
       return fallback || (
         <Card title="🚫 Access Denied">
-          <div style={{ textAlign: 'center', padding: '2rem' }}>
-            <p style={{ color: '#dc2626', marginBottom: '1rem' }}>
+          <div className={styles.accessDenied}>
+            <p className={styles.errorText}>
               You don't have permission to access this feature.
             </p>
-            <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
+            <p className={styles.roleInfo}>
               Required role: <strong>{requiredRole}</strong><br />
               Your role: <strong>{user.role}</strong>
             </p>

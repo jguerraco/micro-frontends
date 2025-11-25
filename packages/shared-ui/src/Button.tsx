@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Button.module.css';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -17,31 +18,10 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   style = {}
 }) => {
-  const baseStyles = {
-    padding: '0.5rem 1rem',
-    border: 'none',
-    borderRadius: '0.25rem',
-    cursor: disabled ? 'not-allowed' : 'pointer',
-    fontSize: '1rem',
-    fontWeight: '500',
-    transition: 'all 0.2s ease',
-    opacity: disabled ? 0.6 : 1,
-  };
-
-  const variantStyles = {
-    primary: {
-      backgroundColor: '#3b82f6',
-      color: 'white',
-    },
-    secondary: {
-      backgroundColor: '#e5e7eb',
-      color: '#374151',
-    },
-  };
-
   return (
     <button
-      style={{ ...baseStyles, ...variantStyles[variant], ...style }}
+      className={`${styles.button} ${styles[variant]}`}
+      style={style}
       onClick={onClick}
       disabled={disabled}
       type={type}

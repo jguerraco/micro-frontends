@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from './Button';
 import { Card } from './Card';
 import { useAuth } from './AuthContext';
+import styles from './LoginForm.module.css';
 
 interface LoginFormProps {
   onSuccess?: () => void;
@@ -24,29 +25,12 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
     }
   };
 
-  const inputStyle = {
-    width: '100%',
-    padding: '0.75rem',
-    border: '1px solid #d1d5db',
-    borderRadius: '0.375rem',
-    fontSize: '1rem',
-    marginBottom: '1rem',
-  };
-
-  const labelStyle = {
-    display: 'block',
-    fontSize: '0.875rem',
-    fontWeight: '500',
-    color: '#374151',
-    marginBottom: '0.5rem',
-  };
-
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+    <div className={styles.container}>
       <Card title="🔐 Login to Continue">
         <form onSubmit={handleSubmit}>
           <div>
-            <label style={labelStyle} htmlFor="email">Email</label>
+            <label className={styles.label} htmlFor="email">Email</label>
             <input
               id="email"
               type="email"
@@ -54,12 +38,12 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              style={inputStyle}
+              className={styles.input}
             />
           </div>
           
           <div>
-            <label style={labelStyle} htmlFor="password">Password</label>
+            <label className={styles.label} htmlFor="password">Password</label>
             <input
               id="password"
               type="password"
@@ -67,20 +51,12 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
-              style={inputStyle}
+              className={styles.input}
             />
           </div>
 
           {error && (
-            <div style={{
-              padding: '0.75rem',
-              backgroundColor: '#fef2f2',
-              border: '1px solid #fecaca',
-              borderRadius: '0.375rem',
-              color: '#dc2626',
-              fontSize: '0.875rem',
-              marginBottom: '1rem',
-            }}>
+            <div className={styles.error}>
               {error}
             </div>
           )}
@@ -95,13 +71,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
           </Button>
         </form>
 
-        <div style={{
-          padding: '1rem',
-          backgroundColor: '#f8fafc',
-          borderRadius: '0.375rem',
-          fontSize: '0.875rem',
-          color: '#64748b',
-        }}>
+        <div className={styles.credentials}>
           <strong>Demo Credentials:</strong><br />
           Admin: admin@example.com / admin123<br />
           User: user@example.com / user123

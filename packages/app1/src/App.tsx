@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Card, ProtectedWrapper } from 'shared-ui';
+import styles from './App.module.css';
 
 const App: React.FC = () => {
   const [count, setCount] = useState(0);
@@ -10,41 +11,24 @@ const App: React.FC = () => {
 
   return (
     <ProtectedWrapper>
-      <div style={{ 
-        padding: '2rem', 
-        fontFamily: 'Arial, sans-serif',
-      }}>
-        <header style={{ marginBottom: '2rem' }}>
-          <h2 style={{ 
-            color: '#1f2937', 
-            fontSize: '1.8rem', 
-            marginBottom: '0.5rem' 
-          }}>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <h2 className={styles.title}>
             Counter Application
           </h2>
-          <p style={{ color: '#6b7280', fontSize: '1rem' }}>
+          <p className={styles.subtitle}>
             A simple counter using shared UI components
           </p>
         </header>
 
         <main>
           <Card title="Counter Application">
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                fontWeight: 'bold', 
-                color: '#3b82f6',
-                marginBottom: '1.5rem'
-              }}>
+            <div className={styles.counterDisplay}>
+              <div className={styles.count}>
                 {count}
               </div>
               
-              <div style={{ 
-                display: 'flex', 
-                gap: '0.5rem', 
-                justifyContent: 'center',
-                flexWrap: 'wrap'
-              }}>
+              <div className={styles.buttonGroup}>
                 <Button onClick={handleDecrement} variant="secondary">
                   Decrease
                 </Button>

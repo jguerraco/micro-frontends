@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Card, ProtectedWrapper } from 'shared-ui';
+import styles from './App.module.css';
 
 interface Todo {
   id: number;
@@ -55,47 +56,34 @@ const App: React.FC = () => {
 
   return (
     <ProtectedWrapper requiredRole="admin">
-      <div style={{ 
-        padding: '2rem', 
-        fontFamily: 'Arial, sans-serif',
-      }}>
-      <header style={{ marginBottom: '2rem' }}>
-        <h2 style={{ 
-          color: '#1f2937', 
-          fontSize: '1.8rem', 
-          marginBottom: '0.5rem' 
-        }}>
+      <div className={styles.container}>
+      <header className={styles.header}>
+        <h2 className={styles.title}>
           Todo List Application
         </h2>
-        <p style={{ color: '#6b7280', fontSize: '1rem' }}>
+        <p className={styles.subtitle}>
           A simple todo manager using shared UI components
         </p>
       </header>
 
-      <main style={{ maxWidth: '600px', margin: '0 auto' }}>
+      <main className={styles.main}>
         <Card title="Add New Todo">
-          <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
+          <div className={styles.inputGroup}>
             <input
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && addTodo()}
               placeholder="Enter a new todo..."
-              style={{
-                flex: 1,
-                padding: '0.5rem',
-                border: '1px solid #d1d5db',
-                borderRadius: '0.25rem',
-                fontSize: '1rem',
-              }}
+              className={styles.input}
             />
             <Button onClick={addTodo} variant="primary">
               Add
             </Button>
           </div>
           
-          <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'space-between' }}>
-            <span style={{ color: '#6b7280' }}>
+          <div className={styles.stats}>
+            <span className={styles.statsText}>
               {totalCount} total, {completedCount} completed
             </span>
             {completedCount > 0 && (
@@ -107,35 +95,22 @@ const App: React.FC = () => {
         </Card>
 
         {totalCount > 0 && (
-          <div style={{ marginTop: '1rem' }}>
+          <div className={styles.todoListContainer}>
             <Card title="Todo List">
               <div>
                 {todos.map(todo => (
                   <div
                     key={todo.id}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      padding: '0.75rem',
-                      backgroundColor: todo.completed ? '#f3f4f6' : 'white',
-                      border: '1px solid #e5e7eb',
-                      borderRadius: '0.25rem',
-                      marginBottom: '0.5rem',
-                    }}
+                    className={`${styles.todoItem} ${todo.completed ? styles.completed : ''}`}
                   >
                     <input
                       type="checkbox"
                       checked={todo.completed}
                       onChange={() => toggleTodo(todo.id)}
-                      style={{ marginRight: '0.5rem' }}
+                      className={styles.checkbox}
                     />
                     <span
-                      style={{
-                        flex: 1,
-                        textDecoration: todo.completed ? 'line-through' : 'none',
-                        color: todo.completed ? '#6b7280' : '#1f2937',
-                      }}
+                      className={`${styles.todoText} ${todo.completed ? styles.completed : ''}`}
                     >
                       {todo.text}
                     </span>

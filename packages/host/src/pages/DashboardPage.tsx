@@ -2,60 +2,36 @@ import React from 'react';
 import { Card } from 'shared-ui';
 import { App1 } from 'app1';
 import { App2 } from 'app2';
+import styles from './DashboardPage.module.css';
 
 const DashboardPage: React.FC = () => {
   return (
     <>
       {/* Overview Section */}
-      <div style={{ marginBottom: '2rem' }}>
+      <div className={styles.overviewSection}>
         <Card title="🎯 Secure Architecture Overview">
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '1rem',
-            marginBottom: '1rem'
-          }}>
-            <div style={{
-              padding: '1rem',
-              backgroundColor: '#f0f9ff',
-              borderRadius: '0.5rem',
-              border: '1px solid #0ea5e9'
-            }}>
-              <h4 style={{ margin: '0 0 0.5rem 0', color: '#0c4a6e' }}>📊 Counter App</h4>
-              <p style={{ margin: 0, color: '#0369a1', fontSize: '0.875rem' }}>
+          <div className={styles.overviewGrid}>
+            <div className={`${styles.overviewCard} ${styles.counterCard}`}>
+              <h4>📊 Counter App</h4>
+              <p>
                 Simple state management demo - available to all users
               </p>
             </div>
-            <div style={{
-              padding: '1rem',
-              backgroundColor: '#f0fdf4',
-              borderRadius: '0.5rem',
-              border: '1px solid #22c55e'
-            }}>
-              <h4 style={{ margin: '0 0 0.5rem 0', color: '#14532d' }}>📝 Todo App</h4>
-              <p style={{ margin: 0, color: '#15803d', fontSize: '0.875rem' }}>
+            <div className={`${styles.overviewCard} ${styles.todoCard}`}>
+              <h4>📝 Todo App</h4>
+              <p>
                 Admin-only feature with persistent storage
               </p>
             </div>
-            <div style={{
-              padding: '1rem',
-              backgroundColor: '#fef7ff',
-              borderRadius: '0.5rem',
-              border: '1px solid #a855f7'
-            }}>
-              <h4 style={{ margin: '0 0 0.5rem 0', color: '#6b21a8' }}>📰 Content Hub</h4>
-              <p style={{ margin: 0, color: '#7c3aed', fontSize: '0.875rem' }}>
+            <div className={`${styles.overviewCard} ${styles.contentCard}`}>
+              <h4>📰 Content Hub</h4>
+              <p>
                 Advanced micro-frontend with nested routing and API integration
               </p>
             </div>
-            <div style={{
-              padding: '1rem',
-              backgroundColor: '#fef2f2',
-              borderRadius: '0.5rem',
-              border: '1px solid #ef4444'
-            }}>
-              <h4 style={{ margin: '0 0 0.5rem 0', color: '#991b1b' }}>🔐 Authentication</h4>
-              <p style={{ margin: 0, color: '#dc2626', fontSize: '0.875rem' }}>
+            <div className={`${styles.overviewCard} ${styles.authCard}`}>
+              <h4>🔐 Authentication</h4>
+              <p>
                 Shared auth across all apps with role-based access
               </p>
             </div>
@@ -64,77 +40,33 @@ const DashboardPage: React.FC = () => {
       </div>
 
       {/* Applications Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
-        gap: '2rem',
-        alignItems: 'start',
-        marginBottom: '2rem'
-      }}>
+      <div className={styles.appsGrid}>
         {/* App1 Section */}
-        <div style={{
-          backgroundColor: 'white',
-          borderRadius: '0.75rem',
-          border: '1px solid #e5e7eb',
-          overflow: 'hidden',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-        }}>
-          <div style={{
-            padding: '1rem',
-            backgroundColor: '#f8fafc',
-            borderBottom: '1px solid #e5e7eb'
-          }}>
-            <h3 style={{ 
-              margin: 0, 
-              color: '#374151',
-              fontSize: '1.25rem',
-              fontWeight: '600'
-            }}>
+        <div className={styles.appSection}>
+          <div className={styles.appHeader}>
+            <h3 className={styles.appTitle}>
               📊 Counter App
             </h3>
-            <p style={{ 
-              margin: '0.25rem 0 0 0', 
-              color: '#6b7280',
-              fontSize: '0.875rem'
-            }}>
+            <p className={styles.appSubtitle}>
               Available to all authenticated users
             </p>
           </div>
-          <div style={{ backgroundColor: '#fbfcfd' }}>
+          <div className={styles.appBody}>
             <App1 />
           </div>
         </div>
 
         {/* App2 Section */}
-        <div style={{
-          backgroundColor: 'white',
-          borderRadius: '0.75rem',
-          border: '1px solid #e5e7eb',
-          overflow: 'hidden',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-        }}>
-          <div style={{
-            padding: '1rem',
-            backgroundColor: '#f8fafc',
-            borderBottom: '1px solid #e5e7eb'
-          }}>
-            <h3 style={{ 
-              margin: 0, 
-              color: '#374151',
-              fontSize: '1.25rem',
-              fontWeight: '600'
-            }}>
+        <div className={styles.appSection}>
+          <div className={styles.appHeader}>
+            <h3 className={styles.appTitle}>
               📝 Todo App
             </h3>
-            <p style={{ 
-              margin: '0.25rem 0 0 0', 
-              color: '#6b7280',
-              fontSize: '0.875rem'
-            }}>
+            <p className={styles.appSubtitle}>
               Admin access required
             </p>
           </div>
-          <div style={{ backgroundColor: '#fbfcfd' }}>
+          <div className={styles.appBody}>
             <App2 />
           </div>
         </div>
@@ -142,32 +74,27 @@ const DashboardPage: React.FC = () => {
 
       {/* Features Info */}
       <Card title="🔧 Router & Navigation Features">
-        <div style={{ 
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '1.5rem',
-          color: '#4b5563'
-        }}>
-          <div>
-            <h5 style={{ margin: '0 0 0.5rem 0', color: '#374151' }}>Navigation</h5>
-            <ul style={{ margin: 0, paddingLeft: '1rem', lineHeight: '1.6' }}>
+        <div className={styles.featuresGrid}>
+          <div className={styles.featureSection}>
+            <h5>Navigation</h5>
+            <ul>
               <li>React Router v6 integration</li>
               <li>Protected routes with authentication</li>
               <li>Role-based navigation visibility</li>
             </ul>
           </div>
-          <div>
-            <h5 style={{ margin: '0 0 0.5rem 0', color: '#374151' }}>Routes</h5>
-            <ul style={{ margin: 0, paddingLeft: '1rem', lineHeight: '1.6' }}>
+          <div className={styles.featureSection}>
+            <h5>Routes</h5>
+            <ul>
               <li>/ - Dashboard (overview)</li>
               <li>/counter - Counter app page</li>
               <li>/todo - Todo app page (admin only)</li>
               <li>/content - Content Hub with nested routes</li>
             </ul>
           </div>
-          <div>
-            <h5 style={{ margin: '0 0 0.5rem 0', color: '#374151' }}>Benefits</h5>
-            <ul style={{ margin: 0, paddingLeft: '1rem', lineHeight: '1.6' }}>
+          <div className={styles.featureSection}>
+            <h5>Benefits</h5>
+            <ul>
               <li>Dedicated URLs for each app</li>
               <li>Browser back/forward support</li>
               <li>Bookmarkable micro-frontend pages</li>
